@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
         },
 
         tipo: {
-            type: DataTypes.ENUM('FUNDADO', 'ANALISTA_5', 'TERMINADO', 'TERMINADO_GERENCIA'),
+            type: DataTypes.ENUM('FUNDADO_RG', 'ANALISTA_5', 'TERMINADO', 'TERMINADO_GERENCIA'),
             allowNull: true
         },
         

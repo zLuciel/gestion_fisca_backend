@@ -197,7 +197,7 @@ const getAllRGController = async () => {
 const getAllRGforGerenciaController = async () => {
     try {
         const response = await NC.findAll({ 
-            where: Sequelize.where(Sequelize.col('IFI.RSA.RSGs.RGs.tipo'), 'FUNDADO'),
+            where: Sequelize.where(Sequelize.col('IFI.RSA.RSGs.RGs.tipo'), 'FUNDADO_RG'),
             order: [['id', 'ASC']],
             attributes: [
                 'id',
