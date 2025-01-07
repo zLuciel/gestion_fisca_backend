@@ -12,13 +12,13 @@ const getAllNCforAnalistaHandler = async (req, res) => {
 
         if (response.length === 0) {
             return res.status(200).json({
-                message: 'No hay NCs para Analista',
+                message: 'Lista para el Analista 1 obtenido correctamente',
                 data: []
             });
         }
 
         return res.status(200).json({
-            message: "Lista para Plataforma obtenido correctamente",
+            message: "Error al traer la lista de Analista 1 desde el handler",
             data: response,
         });
     } catch (error) {

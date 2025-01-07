@@ -1,4 +1,4 @@
-const { updateNC, getNCforAnalista, getAllNCforDigitadorController, getNC } = require('../controllers/ncController');
+const { updateNC, getNCforAnalista, getAllNC, getNC } = require('../controllers/ncController');
 const { createEntidad, createInfraccion } = require('../controllers/entidadController');
 const { getAllMCController, updateMCController } = require('../controllers/medidaComplementariaController');
 const { validateNC } = require('../validations/digitadorValidation');
@@ -133,10 +133,10 @@ const updateNCHandler = async (req, res) => {
 };
 
 
-const allNCforDigitadorHandler = async (req, res) => {
+const allNCHandler = async (req, res) => {
     
     try {
-        const response = await getAllNCforDigitadorController();
+        const response = await getAllNC();
 
         if (response.length === 0) {
             return res.status(200).json({
@@ -305,4 +305,4 @@ const updateMCHandler = async (req, res) => {
 
 
 
-module.exports = { updateNCHandler, allNCforDigitadorHandler, getCodigos, sendDetalle, getAllMCHandler, updateMCHandler };
+module.exports = { updateNCHandler, allNCHandler, getCodigos, sendDetalle, getAllMCHandler, updateMCHandler };

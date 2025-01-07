@@ -6,8 +6,7 @@ const createNC = async ({ id_tramiteInspector }) => {
     try {
         const newNC = await NC.create({
             id_tramiteInspector,
-            estado: 'INICIADO',
-            estado_digitado: 'NO_DIGITADO'
+            estado: 'DIGITADOR'
         });
 
         return newNC || null;
@@ -46,10 +45,10 @@ const updateNC = async (id, data) => {
     }
 };
 
-const getAllNCforDigitadorController = async () => {
+const getAllNC = async () => {
     try {
         const response = await NC.findAll({
-            where: { estado_digitado: 'NO_DIGITADO' }, 
+            where: { estado: 'DIGITADOR' }, 
             order: [['createdAt', 'ASC']],
             attributes: [
                 'id',
@@ -257,7 +256,7 @@ const getAllNCforInstructiva = async () => {
 const getAllNCforAnalista = async () => {
     try {
         const response = await NC.findAll({ 
-            where: { estado: 'INICIADO' }, 
+            where: { estado: 'ANALISTA_1' }, 
             // order: [['id', 'ASC']],
             attributes: [
                 'id',
@@ -297,4 +296,4 @@ const getAllNCforAnalista = async () => {
     }
 };
 
-module.exports = { createNC, getNCforInstructiva, updateNC, getAllNCforDigitadorController , getNCforDigitador, getNCforAnalista, getAllNCforInstructiva, getNC, getAllNCforAnalista};
+module.exports = { createNC, getNCforInstructiva, updateNC, getAllNC , getNCforDigitador, getNCforAnalista, getAllNCforInstructiva, getNC, getAllNCforAnalista};

@@ -129,14 +129,9 @@ module.exports=(sequelize)=>{
         },
 
         estado: {
-            type: DataTypes.ENUM('INICIADO', 'ANALISTA_1', 'A_I', 'TERMINADO'),
+            type: DataTypes.ENUM('DIGITADOR', 'ANALISTA_1', 'A_I', 'TERMINADO'),
             allowNull: true
         },
-
-        estado_digitado: {
-            type: DataTypes.ENUM('NO_DIGITADO', 'DIGITADO'),
-            allowNull: true
-        }
         
     }, {
         tableName: 'NCs',

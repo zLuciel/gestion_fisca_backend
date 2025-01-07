@@ -124,6 +124,8 @@ const createTramiteHandler = async (req, res) => {
 
             const controlActa = await updateControlActaController(id_controlActa, id_inspector);
 
+                   
+            
             const modelNC = 'NOTIFICACIÓN DE CARGO';
             
             const nuevo_doc=newTramiteInspector.documento_nc
